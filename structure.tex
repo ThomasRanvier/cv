@@ -14,6 +14,7 @@
 	hmargin=0.4cm,
 	vmargin=0.4cm,
 	a4paper,
+	bottom = 0cm,
 }
 
 \usepackage{graphicx}
@@ -49,3 +50,9 @@ SmallCapsFont=*-SC.ttf
 \usepackage[nobottomtitles*]{titlesec}
 \titleformat{\section}{\color{headings}\scshape\LARGE\raggedright}{}{0em}{}[\color{black}\titlerule]
 \titlespacing{\section}{0pt}{0pt}{8pt}
+
+\newenvironment{absolutelynopagebreak}
+    {\par\nobreak\vfil\penalty0\vfilneg
+    \vtop\bgroup}
+    {\par\xdef\tpd{\the\prevdepth}\egroup
+    \prevdepth=\tpd}
